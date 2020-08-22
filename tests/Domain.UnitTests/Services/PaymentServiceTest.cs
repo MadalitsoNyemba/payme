@@ -118,5 +118,22 @@ namespace Domain.UnitTests.Services
 
             payment.BankName.Should().Be(Bank.Standard);
         }
+
+         [Fact]
+         public void PaymentService_ShouldShowWhichProviderTransactionIsFrom()
+        {
+            var phoneNumber = "+265888123321";
+            var textMessage = @"
+            You have recieved 840.00MWK
+            from AIRTEL MONEY
+            on 02/06/2020 20:16:04. 
+            Ref: 7F257T6NHD
+            Balance: 840.01MWK
+            ";
+            Payment payment = GetService(phoneNumber, textMessage).GeneratePayment();
+
+            payment.ProviderName.Should().Be(Provider.Mpamba);
+
+        }
     }
 }

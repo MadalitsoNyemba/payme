@@ -5,7 +5,12 @@ namespace Core.Services
     {
         public Provider GetProviderName(string phoneNumber)
         {
-            throw new NotImplementedException();
+           return phoneNumber.Substring(4,2) switch
+            {
+                "88" => Provider.Mpamba,
+                "99" => Provider.AirtelMoney,
+                _ => Provider.None
+            };
         }
 
         public IPaymentService ServiceFromProviderFactory(Provider provider, String phone, String message)
