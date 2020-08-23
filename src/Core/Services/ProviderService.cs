@@ -7,8 +7,8 @@ namespace Core.Services
         {
            return phoneNumber.Substring(4,2) switch
             {
-                "88" => Provider.Mpamba,
-                "99" => Provider.AirtelMoney,
+                "0888800900" => Provider.Mpamba,
+                "AirtelMoney" => Provider.AirtelMoney,
                 _ => Provider.None
             };
         }

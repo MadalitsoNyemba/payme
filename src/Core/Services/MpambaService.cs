@@ -6,9 +6,9 @@ namespace Core.Services
 {
     public class MpambaService : IPaymentService
     {
-        ProviderService _providerService = new ProviderService();
-        public readonly string _message;
-        public readonly string _phoneNumber;
+        // ProviderService _providerService = new ProviderService();
+        private readonly string _message;
+        private readonly string _phoneNumber;
 
         public MpambaService(string message, string phoneNumber)
         {
@@ -34,7 +34,7 @@ namespace Core.Services
                 FromAgent = fromAgent,
                 Reference = reference,
                 BankName = IPaymentService.GetBankNameFromString(BankName),
-                ProviderName = _providerService.GetProviderName(_phoneNumber)
+                ProviderName = Provider.Mpamba
             };
         }
 

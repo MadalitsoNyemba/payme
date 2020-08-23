@@ -122,7 +122,7 @@ namespace Domain.UnitTests.Services
          [Fact]
          public void PaymentService_ShouldShowWhichProviderTransactionIsFrom()
         {
-            var phoneNumber = "+265888123321";
+            var phoneNumber = "0888800900";
             var textMessage = @"
             You have recieved 840.00MWK
             from AIRTEL MONEY
